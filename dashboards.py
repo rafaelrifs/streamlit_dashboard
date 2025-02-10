@@ -106,32 +106,3 @@ fig_rating.update_layout(
 col5.plotly_chart(fig_rating, use_container_width=True)
 
 # ------------------------------------------------------------------------------------------------------ #
-
-# -- Puxando as formatações css do arquivo Stlyes.css
-import pathlib
-
-
-def load_css(file_path):
-    with open(file_path) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-
-# Load the external CSS
-css_path = pathlib.Path("Stlyes.css")
-load_css(css_path)
-
-# ---------------------------------------------  Fim  -------------------------------------------------- #
-
-
-col01.metric("Temperature", "30°F", "-9°F", border=True)
-col02.metric("Wind", "4 mph", "2 mph", border=True)
-
-col03.metric("Humidity", "77%", "5%", border=True)
-col04.metric("Pressure", "30.34 inHg", "-2 inHg", border=True)
-col05.metric("Pressure", "30.34 inHg", "-2 inHg", border=True)
-
-
-options = ["North", "East", "South"]
-selection = st.sidebar.segmented_control(
-    "Directions", options, selection_mode="multi", key="Seletor"
-)
